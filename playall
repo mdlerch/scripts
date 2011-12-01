@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mpc clear
+mpc listall | mpc add

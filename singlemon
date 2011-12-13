@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xrandr --auto
+sleep 1
+sh ~/.fehbg
+xmonad --restart

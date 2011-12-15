@@ -1,0 +1,19 @@
+#!/bin/bash
+
+AURDIR=/home/mike/abs/
+
+cd $AURDIR
+
+for i in *; do
+  if [ -d $i ]; then 
+    if [ ! -f $i/SKIP ]; then
+      echo $i
+      AUR=$(wget -q "http://aur.archlinux.org/rpc.php?type=info&arg=${i}" -O - |sed -r 's#.*"[Vv]ersion":[ "]*([^",]*).*#\1#g')
+      LOCAL=$(pacman -Q $i | awk '{print $2}')
+      echo $AUR
+      echo $LOCAL
+      echo
+    fi
+  fi
+done
+

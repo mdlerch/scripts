@@ -2,16 +2,27 @@
 
 AURDIR=/home/mike/abs/
 
+PACC='\e[0;35m'
+VERS='\e[0;34m'
+SNCC='\e[0;32m'
+OUTC='\e[0;31m'
+RELC='\e[0m'
+
+
 cd $AURDIR
 
 for i in *; do
   if [ -d $i ]; then 
     if [ ! -f $i/SKIP ]; then
-      echo $i
       AUR=$(wget -q "http://aur.archlinux.org/rpc.php?type=info&arg=${i}" -O - |sed -r 's#.*"[Vv]ersion":[ "]*([^",]*).*#\1#g')
       LOCAL=$(pacman -Q $i | awk '{print $2}')
-      echo $AUR
-      echo $LOCAL
+      if [ $AUR = $LOCAL ]; then
+	echo -en "Package ${PACC}$i$RELC is ${SNCC}in sync${RELC} with AUR\n"
+      else
+	echo -en "Package ${PACC}$i$RELC is ${OUTC} out of sync$RELC with AUR\n" 
+      fi
+      echo -en "  Local: $VERS$LOCAL$RELC\n" 
+      echo -en "  AUR:   $VERS$AUR$RELC\n" 
       echo
     fi
   fi

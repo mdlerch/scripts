@@ -1,0 +1,11 @@
+#!/bin/bash
+
+xrandr --auto --output VGA1 --mode 1024x768 --left-of LVDS1
+
+sleep 1
+sh ~/.fehbg
+xmonad --restart
+killall conky
+conky -c ~/.conky/conkyrc &
+conky -c ~/.conky/conky-sched &
+conky -c ~/.conky/conky-event &

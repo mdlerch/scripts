@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '\33]50;%s%d\007' "xft:monaco:pixelsize=" $1
+printf '\33]50;%s%d\007' "xft:monaco:size=" $1

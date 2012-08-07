@@ -1,3 +1,4 @@
 #!/bin/bash
 
-qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Next
+#qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Next
+mocp -f

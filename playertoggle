@@ -1,3 +1,4 @@
 #!/bin/bash
 
-qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.PlayPause
+#qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.PlayPause
+mocp -G

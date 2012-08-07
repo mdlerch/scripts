@@ -1,3 +1,16 @@
 #!/bin/bash
 
-qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Prev
+#qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Prev
+CURPOS=$(mocp -i | grep "CurrentSec" | awk '{print $2}')
+TOTPOS=$(mocp -i | grep "TotalSec" | awk '{print $2}')
+
+let EARLY=TOTPOS*5/100
+
+mocp -r
+sleep .5
+if [ "$CURPOS" -gt "$EARLY" ]
+then
+	mocp -f
+fi
+
+

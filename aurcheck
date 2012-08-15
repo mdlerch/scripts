@@ -29,7 +29,7 @@ for i in *; do
 			fi
 			echo -en "\tLocal:\t $VERS$LOCAL$RELC\n" 
 			echo -en "\tAUR:\t $VERS$AURV$RELC\n" 
-			echo -en "\tSite: ${AURSITE}${AURID}\n"
+			echo -en "\tSite: ${AURSITE}${AURID}\n\n"
 		fi
 	fi
 done

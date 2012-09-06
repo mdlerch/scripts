@@ -1,0 +1,5 @@
+#!/bin/sh
+
+conky -c ~/.conky/system.conkyrc &
+conky -c ~/.conky/event.conkyrc &
+conky -c ~/.conky/sched.conkyrc &

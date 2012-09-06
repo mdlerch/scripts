@@ -7,7 +7,7 @@ urxvtd -q -o -f &
 #synclient FingerHigh=40
 #synclient CoastingSpeed=0
 
-. ~/.bashrc
+#. ~/.bashrc
  
 xsetroot -cursor_name left_ptr
 

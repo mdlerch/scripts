@@ -19,9 +19,9 @@ if [ -f ~/.Xmodmap ]; then
   xmodmap  ~/.Xmodmap
 fi
 
-conky -c ~/.conky/conkyrc &
-conky -c ~/.conky/conky-sched &
-conky -c ~/.conky/conky-event &
+conky -c ~/.conky/system.conkyrc &
+conky -c ~/.conky/sched.conkyrc &
+conky -c ~/.conky/event.conkyrc &
 
 xcompmgr &
 #xmonad &

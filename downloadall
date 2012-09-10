@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for i in `seq 1 10`
+do 
+	wget $10$i.$2
+done
+for i in `seq 1 100`
+do 
+	wget $1$i.$2
+done
+

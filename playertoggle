@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.PlayPause
 mocp -G

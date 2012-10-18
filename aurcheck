@@ -9,7 +9,7 @@ OUTC='\e[0;31m'
 RELC='\e[0m'
 
 SITE="http://aur.archlinux.org/rpc.php?type=info&arg=" 
-AURSITE="http://aur.archlinux.org/packages.php?ID="
+AURSITE="https://aur.archlinux.org/packages.php?ID="
 
 cd $AURDIR
 

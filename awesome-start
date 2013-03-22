@@ -21,6 +21,9 @@ fi
 
 #myconky
 
-xcompmgr &
+xset r rate 250 25
+
+xcompmgr -D 4 -f &
 #xmonad &
 
+exec awesome

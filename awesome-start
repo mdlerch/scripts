@@ -19,7 +19,7 @@ if [ -f ~/.Xmodmap ]; then
   xmodmap  ~/.Xmodmap
 fi
 
-#myconky
+# myconky
 
 xset r rate 250 25
 

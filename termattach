@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+urxvtc -e /home/mike/bin/tmuxattach

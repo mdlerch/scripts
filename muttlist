@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+mutt -F /home/mike/.mutt/muttlist

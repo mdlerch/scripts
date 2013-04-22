@@ -1,8 +1,8 @@
 #!/bin/bash
 
 xrandr --auto --output LVDS1 --mode 1600x900
-sleep 1
-sh ~/.fehbg
-xmonad --restart
-killall conky
-myconky
+# sleep 1
+# sh ~/.fehbg
+# xmonad --restart
+# killall conky
+# myconky

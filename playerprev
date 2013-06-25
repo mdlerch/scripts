@@ -1,11 +1,13 @@
 #!/bin/zsh
 
-#qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Prev
+# amarok
+# qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Prev
+
+
+# moc
 CURPOS=$(mocp -i | grep "CurrentSec" | awk '{print $2}')
 TOTPOS=$(mocp -i | grep "TotalSec" | awk '{print $2}')
-
 ((EARLY=TOTPOS*5/100))
-
 if [ "$CURPOS" -gt "$EARLY" ]
 then
 	mocp -f
@@ -15,5 +17,12 @@ else
 	mocp -r
 fi
 
+# mpc
+# SONGPERC=$(mpc | sed -n 2p | awk -F "(" '{ print $2}' | awk -F "%" '{print $1}')
+# if [ $SONGPERC -gt 2 ]; then
+  # mpc seek 0
+# else
+  # mpc prev
+# fi
 
 

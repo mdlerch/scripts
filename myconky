@@ -1,5 +1,5 @@
 #!/bin/sh
 
 conky -c ~/dotfiles/conky/system.conkyrc &
-conky -c ~/dotfiles/conky/event.conkyrc &
-conky -c ~/dotfiles/conky/sched.conkyrc &
+# conky -c ~/dotfiles/conky/event.conkyrc &
+# conky -c ~/dotfiles/conky/sched.conkyrc &

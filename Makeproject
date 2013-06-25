@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mkdir {src,fig,doc,data,cache,pres}

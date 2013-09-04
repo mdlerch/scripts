@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+date +'%I:%M %t %m - %d'

@@ -4,7 +4,9 @@
 urxvtd -q -o -f &
 #synclient MaxSpeed=1.25
 #synclient VertEdgeScroll=1
-#synclient FingerHigh=40
+synclient FingerHigh=40
+synclient BottomEdge=4000
+synclient HorizEdgeScroll=1
 #synclient CoastingSpeed=0
 
 #. ~/.bashrc

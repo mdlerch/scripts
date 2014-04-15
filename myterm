@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-urxvtc -e tmux

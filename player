@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# mocp
+if [ "$TMUX" ]; then
+    tmux setw monitor-activity off
+    tmux move-window -t 9
+    tmux rename-window "Music"
+fi
+cmus

@@ -1,11 +1,17 @@
 #!/bin/sh
 
-artist=$(mpc -f %artist% | sed -n 1p)
-album=$(mpc -f %album% | sed -n 1p)
-title=$(mpc -f %title% | sed -n 1p)
+# mpc
+# artist=$(mpc -f %artist% | sed -n 1p)
+# album=$(mpc -f %album% | sed -n 1p)
+# title=$(mpc -f %title% | sed -n 1p)
 
-cursongfile=$(mpc search artist "$artist" album "$album" title "$title")
+# cursongfile=$(mpc search artist "$artist" album "$album" title "$title")
 
-mpc crop
-mpc add $(mpc search artist "$artist" album "$album" | grep -v $cursongfile) 
+# mpc crop
+# mpc add $(mpc search artist "$artist" album "$album" | grep -v $cursongfile) 
 
+# cmus
+
+ALBUM=$(cmus-remote -Q | grep album | cut -d " " -f 3-)
+echo $ALBUM
+cmus-remote -C "filter album=\"$ALBUM\""

@@ -1,4 +1,5 @@
 #!/bin/sh
 
 #qdbus org.mpris.amarok /Player org.freedesktop.MediaPlayer.Next
-mocp -f
+# mocp -f
+cmus-remote -n

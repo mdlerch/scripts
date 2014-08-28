@@ -5,17 +5,17 @@
 
 
 # moc
-CURPOS=$(mocp -i | grep "CurrentSec" | awk '{print $2}')
-TOTPOS=$(mocp -i | grep "TotalSec" | awk '{print $2}')
-((EARLY=TOTPOS*5/100))
-if [ "$CURPOS" -gt "$EARLY" ]
-then
-	mocp -f
-	sleep .1
-	mocp -r
-else
-	mocp -r
-fi
+# CURPOS=$(mocp -i | grep "CurrentSec" | awk '{print $2}')
+# TOTPOS=$(mocp -i | grep "TotalSec" | awk '{print $2}')
+# ((EARLY=TOTPOS*5/100))
+# if [ "$CURPOS" -gt "$EARLY" ]
+# then
+	# mocp -f
+	# sleep .1
+	# mocp -r
+# else
+	# mocp -r
+# fi
 
 # mpc
 # SONGPERC=$(mpc | sed -n 2p | awk -F "(" '{ print $2}' | awk -F "%" '{print $1}')
@@ -25,4 +25,4 @@ fi
   # mpc prev
 # fi
 
-
+cmus-remote -r

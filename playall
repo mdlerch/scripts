@@ -1,5 +1,7 @@
 #!/bin/sh
 
-mpc clear
-mpc listall | mpc add
-mpc play
+# mpc clear
+# mpc listall | mpc add
+# mpc play
+
+cmus-remote -C "set aaa_mode=all"

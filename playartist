@@ -9,6 +9,4 @@
 # mpc add $(mpc search artist "$artist" | grep -v $cursongfile) 
 
 # cmus
-ARTIST=$(cmus-remote -Q | grep artist | cut -d " " -f 3-)
-echo $ARTIST
-cmus-remote -C "filter artist=\"$ARTIST\""
+cmus-remote -C "set aaa_mode=artist"

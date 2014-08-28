@@ -11,7 +11,5 @@
 # mpc add $(mpc search artist "$artist" album "$album" | grep -v $cursongfile) 
 
 # cmus
+cmus-remote -C "set aaa_mode=album"
 
-ALBUM=$(cmus-remote -Q | grep album | cut -d " " -f 3-)
-echo $ALBUM
-cmus-remote -C "filter album=\"$ALBUM\""

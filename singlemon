@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 
-xrandr --auto --output LVDS1 --mode 1600x900
+if [[ $HOST == "zooey" ]]
+then
+    xrandr --auto --output LVDS1 --mode 1600x900
+elif [[ $HOST == "teddy" ]]
+then
+    xrandr --auto --output LVDS1 --mode 1280x800
+fi
+
 # sleep 1
 # sh ~/.fehbg
 # xmonad --restart

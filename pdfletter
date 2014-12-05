@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# write a pdf (or ps?) to a pdf at lettersize
+
+if [ "$#" -ne 2 ] || ! ![ -f "$1" ]; then
+    echo "Usage: $0 <original document> <output document>" >&2
+    exit 1
+fi
+
+gs \
+ -o $2 \
+ -sDEVICE=pdfwrite \
+ -sPAPERSIZE=letter \
+ -dFIXEDMEDIA \
+ -dPDFFitPage \
+ -dCompatibilityLevel=1.4 \
+ $1

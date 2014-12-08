@@ -1,9 +1,35 @@
 #!/bin/zsh
 
-# mocp
-if [ "$TMUX" ]; then
-    tmux setw monitor-activity off
-    tmux move-window -t 9
-    tmux rename-window "Music"
+# if not in tmux
+if  [[ -z "$TMUX" ]]; then
+#   if music session exists and attached
+    if [[ $(tmux ls | grep music | grep attached) ]]; then
+#       jump to music session or tell user to find it
+        echo "Music session already exists"
+#   else if music session exists and not attached
+    elif [[ $(tmux ls | grep music | grep -v attached) ]]; then 
+#           attach to tmux -s music
+        tmux attach -t music
+#   else
+    else
+#       tmux new-session -s music
+#       maybe move to window 9
+#       start cmus
+        tmux new-session -d -s music
+        tmux new-window -n cmus -t music:9 'cmus'
+        tmux kill-window -t music:1
+        tmux attach-session -t music
+    fi
+elif [[ `tmux display-message -p '#S'` == "music" ]]; then
+#   start cmus
+    cmus
+# elif music session does not exist
+#   start a new sew session called music
+#   maybe move to window 9
+#   start cmus
+else
+# else
+#   jump to music session?
+#   or tell user to find music session
+    echo "This is not the right tmux session"
 fi
-cmus

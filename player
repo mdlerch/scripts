@@ -10,7 +10,7 @@ if  [[ -z "$TMUX" ]]; then
     elif [[ $(tmux ls | grep music | grep -v attached) ]]; then 
 #           attach to tmux -s music
         tmux attach -t music
-#   else
+#   else if there is no music session
     else
 #       tmux new-session -s music
 #       maybe move to window 9
@@ -20,16 +20,16 @@ if  [[ -z "$TMUX" ]]; then
         tmux kill-window -t music:1
         tmux attach-session -t music
     fi
-elif [[ `tmux display-message -p '#S'` == "music" ]]; then
+# else if in music tmux session
+elif [[ $(tmux display-message -p '#S') == "music" ]]; then
 #   start cmus
     cmus
-# elif music session does not exist
-#   start a new sew session called music
-#   maybe move to window 9
-#   start cmus
-else
-# else
-#   jump to music session?
-#   or tell user to find music session
-    echo "This is not the right tmux session"
+# else if in some tmux session that is not music and there is no music
+elif ! [[ $(tmux ls | grep music) ]]; then
+    tmux new-session -d -s music
+    tmux new-window -n cmus -t music:9 'cmus'
+    tmux kill-window -t music:1
+    tmux switch-client -t music
+elif [[ $(tmux ls | grep music) ]]; then
+    tmux switch-client -t music
 fi

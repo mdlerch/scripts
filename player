@@ -1,4 +1,8 @@
 #!/bin/zsh
+#
+cmus
+
+exit
 
 # if not in tmux
 if  [[ -z "$TMUX" ]]; then

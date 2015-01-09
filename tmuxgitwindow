@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+windowname=`tmux display-message -p '#W'`
+windownamegit="${windowname}-git"
+
+tmux new-window -n ${windownamegit} -c '#{pane_current_path}'

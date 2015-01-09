@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-if [[ $HOST == "zooey" ]]
+if [[ $HOST == "teddy" ]]
 then
     xrandr --auto --output LVDS1 --mode 1600x900
-elif [[ $HOST == "teddy" ]]
+elif [[ $HOST == "zooey" ]]
 then
     xrandr --auto --output LVDS1 --mode 1280x800
 fi

@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+LINTR='library(lintr); '
+CONFIG='source("~/bin/default_lintrs.R"); '
+LINTING='lint("'${1}'", my_linters); '
+
+ARG=${LINTR}${CONFIG}${LINTING}
+
+R --slave --restore --no-save -e $ARG

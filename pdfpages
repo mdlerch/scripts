@@ -2,10 +2,11 @@
 
 # write a pdf that is a subset of sequential pages from an original pdf
 
-if [ "$#" -ne 4] || ! [ -f "$1" ] ; then
+if [ "$#" -ne 4 ] || ! [ -f "$1" ] ; then
     echo "Usage: $0 <original document> <FirstPage> <LastPage> <output document>" >&2
     exit 1
 fi
+
 
 gs -sDEVICE=pdfwrite \
     -dNOPAUSE \

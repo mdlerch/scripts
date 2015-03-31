@@ -8,8 +8,8 @@ fi
 
 echo "Branches merged into $BRANCH"
 
-git branch --merged $BRANCH
+git branch -a --merged $BRANCH
 
 echo "Branches NOT merged into $BRANCH"
 
-git branch --no-merged $BRANCH
+git branch -a --no-merged $BRANCH

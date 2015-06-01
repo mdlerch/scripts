@@ -1,12 +1,17 @@
 #!/bin/zsh
 
-xrandr --output VGA1 --mode 1920x1080
 if [[ $HOST == "esme" ]]
 then
+    xrandr --output VGA1 --mode 1920x1080
     xrandr --output LVDS1 --mode 1280x800 --left-of VGA1
 elif [[ $HOST == "teddy" ]]
 then
+    xrandr --output VGA1 --mode 1920x1080
     xrandr --output LVDS1 --mode 1600x900 --left-of VGA1
+elif [[ $HOST == "buddy" ]]
+then
+    xrandr --output HDMI2 --mode 1920x1080
+    xrandr --output VGA1 --mode 1920x1080 --right-of HDMI2
 fi
 
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# export TERM=xterm-256color
+
 #
 # Modified TMUX start script from:
 #     http://forums.gentoo.org/viewtopic-t-836006-start-0.html
@@ -8,6 +10,7 @@
 #
 
 # use session "main" as default
+
 if [[ -z "$1" ]]; then
     sess_name="main"
 else

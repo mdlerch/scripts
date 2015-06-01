@@ -1,7 +1,8 @@
 #!/bin/bash
 
+dropbox &
 #sh .fehbg
-urxvtd -q -o -f &
+# urxvtd -q -o -f &
 #synclient MaxSpeed=1.25
 #synclient VertEdgeScroll=1
 synclient FingerHigh=40
@@ -10,7 +11,7 @@ synclient HorizEdgeScroll=1
 #synclient CoastingSpeed=0
 
 #. ~/.bashrc
- 
+
 # xsetroot -cursor_name left_ptr
 
 if [ -f ~/.Xdefaults ]; then
@@ -25,7 +26,8 @@ fi
 
 xset r rate 250 25
 
-xcompmgr -D 4 -f &
+compton -b --inactive-dim 0.4
+# xcompmgr -D 4 -f &
 #xmonad &
 
 # Start a D-Bus session

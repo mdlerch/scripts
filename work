@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+if [ "$TMUX" ]
+then
+    tmux move-window -t 9
+    tmux rename-window 'work'
+    tmux send-keys "mutt" C-m
+    tmux split-window -h
+    tmux send-keys "workon pynchclock" C-m
+    tmux send-keys "cd /home/mike/work/time/" C-m
+    tmux send-keys "pynchclock" C-m
+    tmux split-window
+    tmux send-keys "cd /home/mike/work/TODO" C-m
+    tmux send-keys "ghi list" C-m
+else
+    echo "Start tmux first ..."
+fi

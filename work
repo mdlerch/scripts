@@ -2,8 +2,8 @@
 
 if [ "$TMUX" ]
 then
-    tmux move-window -t 9
     tmux rename-window 'work'
+    tmux move-window -t 9
     tmux send-keys "mutt" C-m
     tmux split-window -h
     tmux send-keys "workon pynchclock" C-m

@@ -6,12 +6,14 @@ then
     tmux move-window -t 9
     tmux send-keys "mutt" C-m
     tmux split-window -h
-    tmux send-keys "workon pynchclock" C-m
-    tmux send-keys "cd /home/mike/work/time/" C-m
-    tmux send-keys "pynchclock" C-m
-    tmux split-window
-    tmux send-keys "cd /home/mike/work/TODO" C-m
-    tmux send-keys "ghi list" C-m
+    tmux send-keys -t 2 "workon pynchclock" C-m
+    tmux send-keys -t 2 "cd /home/mike/work/time/" C-m
+    tmux send-keys -t 2 "pynchclock" C-m
+    tmux send-keys -t 2 "tmux split-window -v" C-m
+    tmux split-window -v -t 2
+    tmux send-keys -t 3 "cd /home/mike/work/TODO" C-m
+    tmux send-keys -t 3 "ghi list" C-m
+    tmux select-pane -t 1
 else
     echo "Start tmux first ..."
 fi

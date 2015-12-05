@@ -3,7 +3,7 @@ my_linters <- with_defaults(default = list(),
   assignment_linter,
   closed_curly_linter,
   commas_linter,
-  commented_code_linter,
+  # commented_code_linter,
   infix_spaces_linter,
   line_length_linter(80),
   no_tab_linter,
@@ -21,4 +21,3 @@ my_linters <- with_defaults(default = list(),
 
   NULL
 )
-
